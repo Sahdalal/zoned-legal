@@ -1,0 +1,42 @@
+/* Zoned's public pages. Marble in light, Matte Black in dark (lib/theme.ts). */
+:root {
+  --bg: #F7F5F2;
+  --ink: #1C1B1A;
+  --muted: #655F57;
+  --line: #DCD7CB;
+  --stone: #7A6B4F; /* darker than the in-app stone: 4.8:1 on Marble, WCAG AA for body links */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B0B0C;
+    --ink: #EDECEA;
+    --muted: #8A8680;
+    --line: #232325;
+    --stone: #C9B896;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: var(--muted); margin: 0; }
+h1 { font-size: 2rem; line-height: 1.2; margin: .25rem 0 .5rem; }
+h2 { font-size: 1.25rem; margin: 2.25rem 0 .5rem; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; }
+.meta { color: var(--muted); font-size: .9rem; margin-top: 0; }
+a { color: var(--stone); text-underline-offset: 2px; }
+ul { padding-left: 1.25rem; }
+li { margin: .35rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { text-align: left; vertical-align: top; padding: .6rem .5rem; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; }
+@media (max-width: 30rem) {
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  td:first-child { border-bottom: 0; padding-bottom: 0; }
+}
